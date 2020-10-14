@@ -9,7 +9,7 @@
     <title>Spotify Web</title>
   </head>
   <body>
-    <!-- Main -->
+    <!-- Wrap -->
         <div class="wrap">
           <main>
             <!-- Main Left -->
@@ -17,12 +17,13 @@
               <div class="main-left-flex">
 
                 <!-- Logo -->
-                <div class="logo pd">
-                  <img src="img/logo.svg" alt="logo">
+                <div class="logo pd pd-left">
+                  <img class="logo-large"src="img/logo.svg" alt="logo">
+                  <img class="logo-small" src="img/logo-small.svg" alt="logo small">
                 </div>
 
                 <!-- Nav -->
-                <div class="pd nav-element">
+                <div class="nav-element">
                   <div class="menu-items">
                     <div class="item">
                       <img class="icon-menu"src="img/home.svg" alt="home">
@@ -40,7 +41,7 @@
                 </div>
 
                 <!-- Playlist -->
-                <div class="nav-element playlist-container pd">
+                <div class="nav-element playlist-container pd pd-left">
                   <h2>Playlist</h2>
                   <div class="crea">
                     <i class="fas fa-plus-square"></i>
@@ -60,26 +61,39 @@
                   </div>
 
                 <!-- Installa App -->
-                <div class="installa-app nav-element">
-                  <i class="far fa-arrow-alt-circle-down"></i>
-                  <p>Installa app</p>
-                </div>
+                <div class="nav-element pd-left">
+                  <div class="installa-app ">
+                    <i class="far fa-arrow-alt-circle-down"></i>
+                    <p>Installa app</p>
+                  </div>
+                  <hr>
+                  <div class="users">
+                    <img src="img/profile.svg" alt="">
+                    <h2>John Doe</h2>
 
-              </div>
-            </div>
+                  </div>
+                </div>
 
                 <!-- Main Right -->
-            <div class="main-right">
-              <div class="main-top">
-                <div class="upgrade">
-                  <p>Effettua l'upgrade</p>
+                <div class="main-right">
+                  <div class="main-top">
+                    <div class="upgrade">
+                      <p>Effettua l'upgrade</p>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <div class="">
+                      <ul class="content-menu">
+                        <li>in evidenza</li>
+                        <li>podcast</li>
+                        <li>iclassifiche</li>
+                        <li>generi e mood</li>
+                        <li>nuove uscite</li>
+                        <li>scopri</li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div class="content">
-
-              </div>
-            </div>
-
           </main>
 
           <footer>
