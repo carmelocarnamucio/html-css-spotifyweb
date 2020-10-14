@@ -63,6 +63,14 @@ main {
   color: white;
   text-transform: uppercase;
   text-align: right;
+  margin-right: 10px;
+  transition: transform .2s;
+}
+
+.upgrade p:hover {
+  transform: scale(1.1);
+  right:0;
+
 }
 
 /* Main Left */
@@ -119,6 +127,20 @@ main {
   flex-shrink: 0;
   overflow: hidden;
 }
+
+/* hover main left */
+
+.nav-element li:hover {
+  color: white;
+}
+.nav-element a:hover {
+  color: white;
+}
+.crea:hover {
+  color:white;
+}
+
+/* fine hover main left */
 
 .crea i {
   display: inline-block;
@@ -200,45 +222,57 @@ main .item {
   .logo-small {
     display: block;
   }
+
   .logo-large {
     display: none;
   }
+
   .main-left .logo img {
     width: 100%;
     padding: 10px;
   }
+
   .menu-items .item {
     padding: 10px 13px;
   }
+
   .menu-items .item:first-child {
     border-left: 0;
   }
+
   .pd {
     padding: 0;
   }
+
   .pd-left {
     padding-left: 0;
   }
+
   .menu-items .item a {
     display: none;
   }
+
   .playlist-container {
     visibility:hidden;
     padding:0;
   }
+
   .nav-element {
     flex-shrink: 0.1;
     overflow: hidden;
   }
+
   .installa-app p ,
   hr ,
   .users h2  {
     display: none;
   }
+
   .installa-app ,
   .users {
     padding: 0;
     justify-content: center;
+    margin-bottom: 10px;
   }
 }
 
@@ -275,6 +309,10 @@ main .item {
   font-weight: bold;
 }
 
+.content-menu a:hover {
+  color: white;
+}
+
 .title {
   color: white;
   padding: 30px 0;
@@ -299,46 +337,23 @@ main .item {
   width: 200px;
   height: 200px;
   margin-right: 10px;
-  margin-bottom: 60px;
+  margin-bottom: 110px;
   text-align: center;
 }
 
-.album.stranger {
-  background-image: url(../img/stranger.jpeg);
+.subtitle {
+  padding-top: 20px;
 }
 
-.album.quiet {
-  background-image: url(../img/aquietplace.jpeg);
+.subtitle h3 {
+  color:white;
+  font-size: 16px;
+  padding-bottom: 10px;
 }
 
-.album.split {
-  background-image: url(../img/split.jpeg);
-}
-
-.album.cure {
-  background-image: url(../img/cure.jpeg);
-}
-
-.album.sinister {
-  background-image: url(../img/sinister.jpeg);
-}
-
-.album.release-radar {
-  background-image: url(../img/radar.jpeg);
-}
-
-.album.daily-mix {
-  background-image: url(../img/mixdaily.jpeg);
-}
-
-.album.youg{
-  background-image: url(../img/youg.jpeg);
-  border-radius:50%;
-}
-
-.album.einaudi{
-  background-image: url(../img/einaudi.jpeg);
-  border-radius:50%;
+.subtitle p {
+  color: gray;
+  font-size: 12px;
 }
 
 .filter {
@@ -378,12 +393,15 @@ visibility: visible;
 }
 
 @media screen and (max-width: 479px) {
+
   .main-left {
     width: 50px;
   }
+
   .main-right {
     width: calc(100% - 50px);
   }
+
   .main-top {
     width: calc(100% - 50px);
   }
@@ -404,7 +422,6 @@ visibility: visible;
 .player-left {
   display: flex;
   align-items: center;
-  justify-content: space-around;
   width: 230px;
 }
 
@@ -413,10 +430,15 @@ visibility: visible;
 }
 
 .brano{
-  padding-left: 10px;
+  padding: 0 10px;
+  flex-grow: 1;
 }
 
-footer .player-left p {
+footer .player-left a:hover {
+  text-decoration: underline;
+}
+
+footer .player-left a{
   font-size: 10px;
 }
 
@@ -425,6 +447,9 @@ footer .player-left p {
   font-size: 12px;
 }
 
+.player-left .item i:hover {
+  color:white;
+}
 
 /* Player Center */
 
@@ -439,14 +464,18 @@ footer .player-left p {
 .ico-timeline {
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 50%;
+  justify-content: space-around;
+  width: 30%;
+  transition: transform .2s;
 }
 
 .ico-timeline i {
-  padding-left: 30px;
   color: white;
   font-size: 18px;
+}
+
+.ico-timeline i.play:hover {
+  transform: scale(1.1);
 }
 
 .ico-timeline i.play {
@@ -480,11 +509,23 @@ footer .player-left p {
   width: 80px;
 }
 
+.line:hover {
+  height: 4px;
+  border-radius: 8px;
+  background-color: #9bff00;
+  width: 80px;
+}
+
 .player-center .timeline .circle {
   width: 12px;
   height: 12px;
   background-color: white;
   border-radius: 50%;
+  display: none;
+}
+
+.time:hover .circle{
+  display: block;
 }
 
 /* Player Right */
@@ -510,6 +551,11 @@ footer .player-left p {
   height: 12px;
   background-color: white;
   border-radius: 50%;
+  display: none;
+}
+
+.time:hover .circle{
+  display: block;
 }
 
 .ico-timeline-right {
@@ -524,33 +570,54 @@ footer .player-left p {
 }
 
 @media screen and (max-width: 991px) {
+
   .player-center .time {
     width:230px;
   }
 }
 
+.ico-timeline {
+    width:35%;
+  }
+
 @media screen and (max-width: 767px) {
+
   .player-center .time {
     width: 130px;
   }
+
   .player-right .timeline .time {
     width: 80px;
   }
+
   .ico-timeline-right i {
     font-size: 12px;
   }
 }
+
+.ico-timeline {
+    width: 50%;
+  }
+
 @media screen and (max-width: 479px) {
+
   .player-left {
     width:100px;
   }
+
   .player-left img {
     width: 25px;
   }
+
   .player-center .time {
     width:100px;
   }
+
   .player-right .timeline .time {
     width: 50px;
   }
 }
+
+.ico-timeline {
+    width: 50%;
+  }
