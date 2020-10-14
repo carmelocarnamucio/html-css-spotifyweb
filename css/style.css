@@ -170,6 +170,7 @@ main .item {
   height: 100px;
   display: flex;
   justify-content: space-between;
+  padding: 10px;
 }
 
 /* Player Left */
@@ -179,7 +180,7 @@ main .item {
   display: flex;
   align-items: center;
   /* justify-content: space-around; */
-  width: 20%;
+  width: 230px;
 }
 
 .player-left img {
@@ -188,6 +189,7 @@ main .item {
 
 .brano{
   flex-grow: 1;
+  padding-left: 10px;
 }
 
 footer .player-left p {
@@ -196,7 +198,7 @@ footer .player-left p {
 
 }
 
-footer .player-left .item p:first-child{
+.brano p:first-child{
   color: white;
 }
 
@@ -213,7 +215,7 @@ footer .player-left .item p:first-child{
 
 .ico-timeline {
   display: flex;
-  justify-content: center;
+  align-items: center;
 }
 
 .ico-timeline i {
@@ -223,7 +225,7 @@ footer .player-left .item p:first-child{
 }
 
 .ico-timeline i.play {
-  font-size: 25px;
+  font-size: 28px;
 }
 
 .timeline {
@@ -241,7 +243,7 @@ footer .player-left .item p:first-child{
 
 .timeline p {
   padding: 20px;
-  font-size: 12px;
+  font-size: 10px;
   color: white;
 }
 
