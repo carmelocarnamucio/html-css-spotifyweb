@@ -35,12 +35,6 @@ main {
   height: calc(100vh - 100px);
 }
 
-.wrap {
-  background-color: red;
-  height: 100vh;
-  min-width: 500px;
-}
-
 /* Main Top */
 
 .main-top {
@@ -53,6 +47,7 @@ main {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  z-index: 5;
 }
 
 .upgrade p {
@@ -66,11 +61,9 @@ main {
   margin-right: 10px;
   transition: transform .2s;
 }
-
 .upgrade p:hover {
   transform: scale(1.1);
   right:0;
-
 }
 
 /* Main Left */
@@ -133,9 +126,11 @@ main {
 .nav-element li:hover {
   color: white;
 }
+
 .nav-element a:hover {
   color: white;
 }
+
 .crea:hover {
   color:white;
 }
@@ -205,7 +200,7 @@ hr {
 
 main .item {
   line-height: 25px;
-  padding-top: 5px;
+  padding: 5px 0;
 }
 
 .menu-items img{
@@ -224,7 +219,7 @@ main .item {
   }
 
   .logo-large {
-    display: none;
+  display: none;
   }
 
   .main-left .logo img {
@@ -290,9 +285,7 @@ main .item {
   background-color: #141922;
   height: 100%;
   width:100%;
-  padding-top: 120px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding: 120px 20px 20px 20px;
 }
 
 .content .content-menu {
@@ -300,18 +293,32 @@ main .item {
  justify-content: center;
  flex-wrap: wrap;
  padding-bottom: 20px;
+
 }
 
 .content .content-menu li {
   padding-right: 20px;
+  padding-bottom: 20px;
   text-transform: uppercase;
   font-size: 12px;
   font-weight: bold;
+  position:relative;
+}
+
+.content .content-menu span  {
+  width: 31px;
+  height: 2px;
+  background-color: #9bff00;
+  position: absolute;
+  top: 18px;
+  left: 25px;
 }
 
 .content-menu a:hover {
   color: white;
 }
+
+/* Album */
 
 .title {
   color: white;
@@ -328,17 +335,31 @@ main .item {
 
 .collection-album {
   display: flex;
-  flex-wrap: wrap;
 }
 
-.album{
-  background-image: url(../img/metal_lifting.jpg);
-  background-size: cover;
-  width: 200px;
-  height: 200px;
-  margin-right: 10px;
-  margin-bottom: 110px;
+.album {
+  width: calc( 100% / 6 );
+  padding-right: 10px;
   text-align: center;
+}
+
+.contenitore img {
+  width: 100%;
+  display: block;
+}
+
+.contenitore {
+ position: relative;
+}
+
+.youg .contenitore img ,
+.youg .filter {
+  border-radius:50%;
+}
+
+.einaudi .contenitore img ,
+.einaudi .filter {
+  border-radius:50%;
 }
 
 .subtitle {
@@ -360,36 +381,49 @@ main .item {
   background-color: rgba(0, 0, 0, 0.5);
   width: 100%;
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  visibility: hidden;
-}
-
-.einaudi .filter ,
-.youg .filter  {
-  background-color: rgba(0, 0, 0, 0.5);
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius:50%;
-  visibility: hidden;
-}
-
-.album .filter .play i {
-  color: white;
-  font-size: 50px;
+  position: absolute;
+  top:0;
+  left:0;
+  bottom:0;
+  right:0;
   display: none;
 }
 
-.album:hover .filter {
-visibility: visible;
+.contenitore .filter .play i {
+  color: white;
+  font-size: 50px;
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50% , -50%);
 }
 
-.album:hover .play i {
-  display: block;
+.album:hover .filter {
+display: block;
+}
+
+/* Fine Album */
+
+@media screen and (max-width: 991px) {
+
+  .album {
+   width: calc( 100% / 4 );
+ }
+
+  .collection-album {
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 767px) {
+
+  .album {
+   width: calc( 100% / 2 );
+ }
+
+  .collection-album {
+    flex-wrap: wrap;
+  }
 }
 
 @media screen and (max-width: 479px) {
@@ -405,6 +439,13 @@ visibility: visible;
   .main-top {
     width: calc(100% - 50px);
   }
+
+  .album {
+   width: calc( 100% / 2 );
+ }
+  .collection-album {
+    flex-wrap: wrap;
+  }
 }
 
 /* FOOTER */
@@ -415,6 +456,7 @@ visibility: visible;
   display: flex;
   justify-content: space-between;
   padding: 10px;
+
 }
 
 /* Player Left */
@@ -423,6 +465,7 @@ visibility: visible;
   display: flex;
   align-items: center;
   width: 230px;
+
 }
 
 .player-left img {
@@ -440,6 +483,7 @@ footer .player-left a:hover {
 
 footer .player-left a{
   font-size: 10px;
+
 }
 
 .brano p:first-child{
@@ -454,18 +498,17 @@ footer .player-left a{
 /* Player Center */
 
 .player-center {
-  width: 60%;
+  width: 600px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
 }
 
 .ico-timeline {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  width: 30%;
+  width: 50%;
   transition: transform .2s;
 }
 
@@ -485,13 +528,15 @@ footer .player-left a{
 .timeline {
   display: flex;
   align-items: center;
+  width: 100%;
+  justify-content: center;
 }
 
 .time {
   height: 4px;
   border-radius: 8px;
   background-color: gray;
-  width: 400px;
+  width: 100%;
   display: flex;
   align-items: center;
 }
@@ -506,14 +551,11 @@ footer .player-left a{
   height: 4px;
   border-radius: 8px;
   background-color: lightgray;
-  width: 80px;
+  width: 21%;
 }
 
-.line:hover {
-  height: 4px;
-  border-radius: 8px;
+.time:hover .line{
   background-color: #9bff00;
-  width: 80px;
 }
 
 .player-center .timeline .circle {
@@ -523,7 +565,6 @@ footer .player-left a{
   border-radius: 50%;
   display: none;
 }
-
 .time:hover .circle{
   display: block;
 }
@@ -533,17 +574,17 @@ footer .player-left a{
 .player-right {
   display: flex;
   justify-content:flex-end;
-  width: 26%;
+  width: 200px;
 }
 
 .player-right .timeline .time {
   align-items: center;
-  width: 100px;
   display: flex;
+  width: 100%;
 }
 
 .player-right .timeline .line {
-  width: 20px;
+  width: 20%;
 }
 
 .player-right .timeline .circle {
@@ -569,55 +610,21 @@ footer .player-left a{
   color: white;
 }
 
-@media screen and (max-width: 991px) {
-
-  .player-center .time {
-    width:230px;
-  }
-}
-
-.ico-timeline {
-    width:35%;
-  }
+/* Fine Player Right */
 
 @media screen and (max-width: 767px) {
-
-  .player-center .time {
-    width: 130px;
-  }
-
-  .player-right .timeline .time {
-    width: 80px;
-  }
 
   .ico-timeline-right i {
     font-size: 12px;
   }
-}
 
-.ico-timeline {
+  .ico-timeline {
     width: 50%;
   }
-
+}
 @media screen and (max-width: 479px) {
-
-  .player-left {
-    width:100px;
-  }
 
   .player-left img {
     width: 25px;
   }
-
-  .player-center .time {
-    width:100px;
-  }
-
-  .player-right .timeline .time {
-    width: 50px;
-  }
 }
-
-.ico-timeline {
-    width: 50%;
-  }
