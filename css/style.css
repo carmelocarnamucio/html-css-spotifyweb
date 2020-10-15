@@ -113,7 +113,7 @@ main {
 
 .crea-playlist  {
   overflow-y: auto;
-  height: 60%;
+  height: 70%;
 }
 
 .nav-element {
@@ -154,7 +154,7 @@ main {
 }
 
 .nome-playlist li {
-  padding-top: 20px;
+  padding-top: 14px;
   font-size: 12px;
   font-weight: bold;
 }
@@ -218,7 +218,11 @@ main .item {
   }
 
   .logo-large {
-  display: none;
+    display: none;
+  }
+
+  .main-left-flex {
+    height: 85%;
   }
 
   .main-left .logo img {
