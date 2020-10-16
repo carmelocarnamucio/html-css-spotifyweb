@@ -154,7 +154,7 @@ main {
 }
 
 .nome-playlist li {
-  padding-top: 14px;
+  padding-top: 19px;
   font-size: 12px;
   font-weight: bold;
 }
@@ -622,9 +622,29 @@ footer .player-left a{
     width: 50%;
   }
 }
+
+@media screen and (max-width: 660px) {
+
+  .player-left img {
+    width: 25px;
+  }
+
+  .player-right {
+    flex-wrap: wrap;
+    padding-bottom: 10px;
+  }
+
+}
+
 @media screen and (max-width: 479px) {
 
   .player-left img {
     width: 25px;
   }
+
+  .player-right {
+    flex-wrap: wrap;
+    padding-bottom: 10px;
+  }
+
 }
